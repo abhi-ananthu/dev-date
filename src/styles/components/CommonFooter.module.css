@@ -158,7 +158,7 @@
     .cards {
         flex-direction: row;       
         align-items: flex-start;
-        gap: 1.5rem;
+        gap: 3rem;
     }
     .content {
         width: 100%;
