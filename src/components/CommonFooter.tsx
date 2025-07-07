@@ -8,7 +8,9 @@ const CommonFooter = () => {
         <div className={styles.content}>
             Topsdraw works as a strategic partner facilitating the right business connections to boost growth and market value.
         </div>
-        <div className={styles.options}>
+        <div className={styles.cards}>
+          
+          <div className={styles.options}>
             <p className={styles.title}>Topsdraw</p>
             <p className={styles.option}>About Us</p>
             <p className={styles.option}>Contact Us</p>
@@ -33,6 +35,7 @@ const CommonFooter = () => {
                 <h6 className={styles.option}>You</h6>
                 <h6 className={styles.option}>In</h6>
             </div>
+        </div>
         </div>
       </div>
       <div className={styles.copyright}>
