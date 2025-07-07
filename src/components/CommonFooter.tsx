@@ -35,6 +35,9 @@ const CommonFooter = () => {
             </div>
         </div>
       </div>
+      <div className={styles.copyright}>
+        <p className={styles.copyright_text}>2024. Topsdraw – all rights reserved.</p>
+      </div>
     </div>
   )
 }
