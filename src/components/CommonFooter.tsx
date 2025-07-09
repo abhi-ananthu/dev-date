@@ -29,11 +29,13 @@ const CommonFooter = () => {
             <p className={styles.option}>Help Center</p>
         </div>
         <div className={styles.options}>
-            <p className={styles.title}>Social connect</p>
+            <p className={styles.title}>Social Connect</p>
             <div className={styles.socials}>
-                <h6 className={styles.option}>Ins</h6>
-                <h6 className={styles.option}>You</h6>
-                <h6 className={styles.option}>In</h6>
+                <h6 className={styles.icon}>Fb</h6>
+                <h6 className={styles.icon}>X</h6>
+                <h6 className={styles.icon}>Yt</h6>
+                <h6 className={styles.icon}>Ln</h6>
+                <h6 className={styles.icon}>In</h6>
             </div>
         </div>
         </div>

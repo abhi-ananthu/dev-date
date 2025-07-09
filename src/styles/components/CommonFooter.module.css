@@ -1,171 +1,219 @@
+/* Base styles for mobile (default) */
 .body {
     width: 100%;
     height: 100%;
     min-height: 4rem;
-    padding: 1rem 8rem;
+    padding: 2rem 1rem;
     margin: auto;
     background: linear-gradient(to bottom, rgb(70, 29, 194), rgba(0, 0, 0, 1));
 }
 
 .logo_div {
-    padding-top: 4rem;
-    padding-bottom: 0rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 .logo {
-    width: 170px;
+    width: 120px;
     height: auto;
     object-fit: contain;
 }
 
 .footer {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
 }
 
 .content {
+    width: 100%;
     max-width: 100%;
-    width: 20vw;
-    margin-top: 1.5rem;
-    font-size: 1rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
     font-weight: 200;
     color: #fff;
 }
 
 .cards {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5rem;
+    flex-direction: row; /* Keep row layout as requested */
+    flex-wrap: wrap; /* Allow wrapping to create a new row for socials */
+    align-items: flex-start;
+    gap: 1.5rem;
 }
 
 .options {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 1rem;
+    flex: 1; /* Allow other options to share row space */
 }
 
 .title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
+.options:has(.socials) .title {
+    display: none; /* Hide Social Connect title by default */
+}
+
 .option {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 300;
 }
 
 .socials {
     display: flex;
+    justify-content: center; /* Center socials on mobile */
+    flex-wrap: nowrap; /* Keep social links on a single line */
     gap: 1rem;
-    margin-bottom: 6rem;
+    margin-bottom: 0.5rem;
+}
+
+.options:has(.socials) {
+    order: 1; /* Socials appear after other options but before copyright */
+    width: 100%; /* Force socials to take full width, creating a new row */
+    align-items: center; /* Center content within the options div */
 }
 
 .copyright {
     text-align: center;
     width: 100%;
     margin: auto;
-    padding: 2.5rem 0;
+    padding: 0.5rem 0;
+    order: 2; /* Copyright appears after socials */
 }
 
 .copyright_text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 200;
     color: #fff;
 }
+.icon{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
 
-@media (max-width: 768px) {
+/* Medium screens (e.g., tablets) */
+@media (min-width: 576px) {
+    .body {
+        padding: 2rem 2rem;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .content {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .option {
+        font-size: 1rem;
+    }
+
+    .cards {
+        gap: 2rem;
+    }
+
+    .socials {
+        justify-content: center; /* Keep socials centered */
+        flex-wrap: nowrap; /* Ensure single line */
+    }
+
+    .options:has(.socials) .title{
+       display: block;
+       white-space: nowrap; /* Ensure Social Connect text stays on a single line */
+    }
+}
+
+/* Large screens (e.g., desktops) */
+@media (min-width: 768px) {
     .body {
         padding: 2rem 4rem;
     }
+
     .logo_div {
-        padding-top: 2rem;
-        padding-bottom: 1rem;
+        padding-bottom: 1.5rem;
     }
+
     .logo {
-        width: 140px;
-        height: 45px;
+        width: 150px;
     }
+
     .footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3rem;
     }
-    .cards {
-        align-items: center;   
-        gap: 1.5rem;
-    }
+
     .content {
-        width: 100%;
-        max-width: 80vw;
-        margin-bottom: 1.5rem;
+        max-width: 90%;
     }
-    .options {
-        width: 100%;
-        margin-top: 0;
+
+    .cards {
+        gap: 3rem;
+    }
+
+    .options:has(.socials) .title {
+        display: block; /* Show Social Connect title on larger screens */
+        white-space: nowrap; /* Ensure Social Connect text stays on a single line */
     }
 }
 
-@media (max-width: 1200px) and (min-width: 993px) {
+/* Extra large screens (desktop) */
+@media (min-width: 992px) {
     .body {
         padding: 2rem 6rem;
     }
-    .logo_div {
-        padding-top: 3rem;
-        padding-bottom: 1rem;
-    }
-    .logo {
-        width: 150px;
-        height: auto;
-    }
-    .footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2rem;
-    }
-    .cards {
-        flex-direction: row;
-        align-items: center;
-        gap: 4rem;
-    }
-    .content {
-        width: 100%;
-        max-width: 40vw;
-        margin-bottom: 2rem;
-    }
-    .options {
-        width: auto;
-    }
-}
 
-@media (max-width: 992px) and (min-width: 769px) {
-    .body {
-        padding: 2rem 5rem;
-    }
     .logo_div {
         padding-top: 3rem;
         padding-bottom: 1rem;
     }
+
     .logo {
-        width: 160px;
-        height: auto;
+        width: 170px;
     }
+
     .footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
+        gap: 5rem;
     }
-    .cards {
-        flex-direction: row;       
-        align-items: flex-start;
-        gap: 3rem;
-    }
+
     .content {
-        width: 100%;
-        max-width: 40vw;
-        margin-bottom: 1.5rem;
+        max-width: 20vw;
+        margin-top: 1.5rem;
+        font-size: 1rem;
     }
-    .options {
-        width: auto;
+
+    .cards {
+        gap: 5rem;
+    }
+
+    .options:has(.socials) {
+        order: 0; /* Reset order for desktop */
+        width: auto; /* Reset width for desktop layout */
+        align-items: flex-start; /* Align left as per original desktop design */
+        flex: 1; /* Restore flex behavior for row layout */
+    }
+
+    .socials {
+        margin-bottom: 6rem;
+        justify-content: flex-start; /* Align left for desktop */
+        flex-wrap: nowrap; /* Ensure single line */
+    }
+
+    .options:has(.socials) .title {
+        display: block; /* Show Social Connect title on desktop */
+        white-space: nowrap; /* Ensure Social Connect text stays on a single line */
     }
 }
