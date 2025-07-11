@@ -4,6 +4,7 @@ import { Features } from "@/components/Features";
 import { Footer } from "@/components/Footer";
 import LoginButton from "@/components/LoginButton";
 import CommonFooter from "@/components/CommonFooter";
+import Terms from "@/components/Terms";
 
 export default function Home() {
   return (

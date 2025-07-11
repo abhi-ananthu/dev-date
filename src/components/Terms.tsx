@@ -13,7 +13,7 @@ const Terms = ({
 }) => {
   return (
     <>
-      
+      <h1>{title}</h1>
     </>
   )
 }
