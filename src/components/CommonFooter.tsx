@@ -31,11 +31,11 @@ const CommonFooter = () => {
         <div className={styles.options}>
             <p className={styles.title}>Social Connect</p>
             <div className={styles.socials}>
-                <h6 className={styles.icon}>Fb</h6>
-                <h6 className={styles.icon}>X</h6>
-                <h6 className={styles.icon}>Yt</h6>
-                <h6 className={styles.icon}>Ln</h6>
-                <h6 className={styles.icon}>In</h6>
+                <h6 className={styles.icon}><Image src="/images/facebook.png" alt="Fb" width={24} height={24} className={styles.iconimage}/></h6>
+                <h6 className={styles.icon}><Image src="/images/x.png" alt="X" width={24} height={24} className={styles.iconimage}/></h6>
+                <h6 className={styles.icon}><Image src="/images/youtube.png" alt="YT" width={28} height={28}/></h6>
+                <h6 className={styles.icon}><Image src="/images/linkedin.png" alt="Ln" width={24} height={24} className={styles.iconimage}/></h6>
+                <h6 className={styles.icon}><Image src="/images/instagram.png" alt="Insta" width={24} height={24} className={styles.iconimage}/></h6>
             </div>
         </div>
         </div>

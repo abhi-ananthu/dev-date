@@ -94,10 +94,12 @@
 .icon{
     font-size: 1.2rem;
     font-weight: 600;
-    color: #fff;
     cursor: pointer;
 }
-
+.iconimage {
+    object-fit: contain;
+    filter: invert(40%);
+}
 @media (min-width: 576px) {
     .body {
         padding: 2rem 2rem;
@@ -203,6 +205,9 @@
         width: auto;
         align-items: flex-start;
         flex: 1; 
+    }
+    .copyright{
+        padding-top: 2rem;
     }
 
     .socials {
