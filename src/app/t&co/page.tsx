@@ -18,7 +18,7 @@ const page = async () => {
       <Terms
         title={meta.title}
         image={meta.image}
-        lastUpdated={meta.lastUpdated}
+        lastUpdated={meta.updated}
         intro={sections[0]?.content || ""}
         sections={sections.slice(1)}
       />

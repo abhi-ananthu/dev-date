@@ -1,7 +1,7 @@
 ---
 title: "Terms & Conditions"
 updated: "November 1, 2022"
-image: "/images/terms-hero.jpg"
+image: "/images/terms&co.jpg"
 breadcrumb: "Home / Terms & Conditions"
 ---
 

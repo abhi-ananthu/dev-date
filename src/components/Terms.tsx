@@ -1,3 +1,5 @@
+import ImageCard from "./ImageCard";
+
 const Terms = ({
     title,
     image,
@@ -13,6 +15,7 @@ const Terms = ({
 }) => {
   return (
     <>
+      <ImageCard imageUrl={image} title={title} lastUpdated={lastUpdated} />
       <h1>{title}</h1>
     </>
   )
