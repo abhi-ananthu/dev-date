@@ -1,4 +1,5 @@
 import Accordion from "./Accordion";
+import CommonFooter from "./CommonFooter";
 import ImageCard from "./ImageCard";
 import styles from "@/styles/components/Terms.module.css";
 const Terms = ({
@@ -22,6 +23,7 @@ const Terms = ({
         <p className={styles.intro}>{intro}</p>
         <Accordion className={styles} sections={sections} />
       </div>
+      <CommonFooter/>
     </>
   )
 }
