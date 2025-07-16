@@ -1,5 +1,6 @@
 import styles from "@/styles/components/ImageCard.module.css";
 import Image from "next/image";
+import { Suspense } from "react";
 const ImageCard = ({
     imageUrl,
     title,
@@ -12,11 +13,13 @@ const ImageCard = ({
   return (
     <>
       <div className={styles.content}>
-        <Image src={imageUrl} alt={title} width={300} height={200} className={styles.image} />
-        <div className={styles.textOverlay}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.lastUpdated}>Last Updated: {lastUpdated}</p>
-        </div>
+        <Suspense fallback={<div className={styles.imagePlaceholder}>Loading...</div>}>
+          <Image src={imageUrl} alt={title} width={300} height={200} className={styles.image} />
+        </Suspense>
+          <div className={styles.textOverlay}>
+            <h3 className={styles.title}>{title}</h3>
+            <p className={styles.lastUpdated}>Last Updated: {lastUpdated}</p>
+          </div>
       </div>
     </>
   )

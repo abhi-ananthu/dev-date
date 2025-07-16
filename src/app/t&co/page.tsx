@@ -2,7 +2,7 @@ import Terms from "@/components/Terms";
 import { getPageContent } from "@/utils/markdownUtil"
 
 const page = async () => {
-    let meta:Object = {};
+    let meta: { title?: string; image?: string; updated?: string } = {};
     let sections: Array<{ title: string; content: string }> = [];
     const data = await getPageContent("sample");
     if(data){
@@ -16,9 +16,9 @@ const page = async () => {
   return (
     <>
       <Terms
-        title={meta.title}
-        image={meta.image}
-        lastUpdated={meta.updated}
+        title={meta.title || "Terms and Conditions"}
+        image={meta.image || ""}
+        lastUpdated={meta.updated || "Not specified"}
         intro={sections[0]?.content || ""}
         sections={sections.slice(1)}
       />

@@ -7,12 +7,14 @@ breadcrumb: "Home / Terms & Conditions"
 
 ## Introduction
 
-Welcome to Topsdraw’s general terms & conditions. These terms outline the agreement between you (the user) and Topsdraw regarding the use of our platform and services.
+Welcome to Topsdraw – Your Dedicated B2B Platform for Business Growth
 
-These terms apply when you browse, use, or create an account on our site. By doing so, you agree to these terms. If you disagree, do not use the platform.
 
-For questions, contact us at [support@topsdraw.com](mailto:support@topsdraw.com).
+Thank you for choosing [www.topsdraw.com](https://www.topsdraw.com), a specialized B2B platform designed to connect businesses in search of professional services with verified and reliable service providers. Our services are hosted in the UAE and adhere to the Data Protection Law in the UAE (Federal Law No 45), effective from 2 January 2022. By using our services, you agree to comply with these terms and conditions in their entirety. If you represent a company or other legal entity, you warrant that you have the authority to bind such entities and their affiliates, as applicable. This legal contract governs your use of our website and services. Should you not accept our terms, you may not use our website.
 
+Additionally, please refer to our [Privacy Policy](#), which is separate from this document.
+
+We may periodically review and amend our **Terms of Use** at our sole discretion and without prior notice. We encourage you to visit this page regularly to access the most up-to-date version. Topsdraw reserves the right to deny access to anyone at any time and for any reason, including, but not limited to, violation of these **Terms**.
 ---
 
 ## Eligibility
