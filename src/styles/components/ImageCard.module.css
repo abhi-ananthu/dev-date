@@ -1,7 +1,7 @@
 
 .content {
     width: 90%;
-    max-height: 18rem;
+    height:28rem;
     margin: 1rem auto;
     border-radius: 1rem;
     position: relative;
@@ -25,20 +25,23 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-start;
     color: white;
     text-align: left;
 }
 
 .title {
+    overflow-wrap: break-word;
+    word-break: break-word;
     margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    line-height: 1.2;
+    max-width: 15rem;
+    font-size: 2.5rem;
 }
 
 .lastUpdated {
     font-size: 0.8rem;
+    padding-bottom: 0.5rem;
 }
 .imagePlaceholder {
     width: 100%;
@@ -52,10 +55,11 @@
 
 @media (min-width: 576px) {
     .content{
-        max-height: 20rem;;
+        max-height: 20rem;
     }
     .title {
         font-size: 1.25rem;
+        max-width: max-content;
     }
     
     .lastUpdated {
@@ -63,6 +67,7 @@
     }
     .textOverlay {
         padding-left: 1.5rem;
+        justify-content: center;
     }
 }
 
@@ -111,6 +116,7 @@
 @media (min-width: 1400px){
     .content {
         max-height: 20rem;
+        width: 95%;
         border-radius: 2.5rem;
     }
     .image {

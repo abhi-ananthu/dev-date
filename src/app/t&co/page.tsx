@@ -1,10 +1,11 @@
 import Terms from "@/components/Terms";
 import { getPageContent } from "@/utils/markdownUtil"
 
+export const dynamic = 'force-static';
 const page = async () => {
     let meta: { title?: string; image?: string; updated?: string } = {};
     let sections: Array<{ title: string; content: string }> = [];
-    const data = await getPageContent("sample");
+    const data = await getPageContent("terms");
     if(data){
       meta = data.meta;
       //console.log(meta);

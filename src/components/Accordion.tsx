@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Accordion = ({className, sections}:{
     className?: any,
-    sections: Array<{ title: string; content: string }>
+    sections: Array<{ title: string; content: any }>
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const toggleAccordion = (index: number) => {
@@ -27,11 +27,11 @@ const Accordion = ({className, sections}:{
               className={`${className.accordion_icon} ${isOpen ? className.accordion_icon_open : ''}`}
             />
             </div>
-            <p
+            <div
                 className={`${className.accordion_content} ${isOpen ? className.accordion_content_open : ''}`}
               >
                 {section.content}
-              </p>
+              </div>
           </div>
         )
       })}
