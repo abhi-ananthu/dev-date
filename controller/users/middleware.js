@@ -1,6 +1,29 @@
 import prisma from '../../prisma.js';
 
-export const createUser = async (req, res, next) => {};
+export const createUser = async (req, res, next) => {
+    try{
+        const { 
+            name,
+            email,
+            githubUsername,
+
+        } = req.body;
+        const newUser = await prisma.user.create({
+            data:{
+                name,
+                email,
+                githubUsername
+            }
+        });
+        res.status(201).send(newUser);
+    }catch(err){
+        if(err.code === 'P2002'){
+            res.status(400).send('User with this email or GitHub username already exists');
+        }else{
+            res.status(500).send('Error creating user');
+        }
+    }
+};
 
 export const viewUserDetails = async (req, res) => {
     try{

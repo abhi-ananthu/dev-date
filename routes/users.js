@@ -1,11 +1,9 @@
 import { Router } from 'express';
-import { viewUserDetails } from '../controller/users/middleware';
+import { createUser, viewUserDetails } from '../controller/users/middleware';
 
 const router = Router();
 
-router.post('/create-user', (req, res) => {
-  res.send('User created');
-});
+router.post('/create-user', createUser);
 
 router.get('/view-user/:id', viewUserDetails);
 
