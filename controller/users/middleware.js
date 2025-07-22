@@ -2,7 +2,7 @@ import prisma from '../../prisma.js';
 
 export const createUser = async (req, res, next) => {};
 
-export const viewUserDetails = async (req, res, next) => {
+export const viewUserDetails = async (req, res) => {
     try{
         const userId = req.params.id;
         const user = await prisma.user.findUnique({
