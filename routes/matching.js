@@ -1,9 +1,14 @@
 import { Router } from 'express';
+import {
+  acceptMatchingRequest,
+  getSwipedData,
+  requestUserMiddleware,
+} from '../controller/matching/middleware.js';
 
-const router = Router();
+const MatchRouter = Router();
 
-router.post('/request-user', (req, res) => {
+MatchRouter.post('/request-user', requestUserMiddleware);
+MatchRouter.get('/view/:id', getSwipedData);
+MatchRouter.patch('/accept/:id', acceptMatchingRequest);
 
-});
-
-export default router;
+export default MatchRouter;

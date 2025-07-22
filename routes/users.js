@@ -1,28 +1,28 @@
 import { Router } from 'express';
 import { createUser, viewUserDetails } from '../controller/users/middleware.js';
 
-const router = Router();
+const UserRouter = Router();
 
-router.post('/create-user', createUser);
+UserRouter.post('/create-user', createUser);
 
-router.get('/view-user/:id', viewUserDetails);
+UserRouter.get('/view-user/:id', viewUserDetails);
 
-router.post('/update-user/:id', (req, res) => {
+UserRouter.post('/update-user/:id', (req, res) => {
   res.send(`User details updated for ID: ${req.params.id}`);
 });
 
-router.get('/delete-user/:id', (req, res) => {
+UserRouter.get('/delete-user/:id', (req, res) => {
   res.send(`User deleted with ID: ${req.params.id}`);
 });
 
-router.get('/block-user/:id', (req, res) => {
+UserRouter.get('/block-user/:id', (req, res) => {
   res.send(`User blocked with ID: ${req.params.id}`);
 });
 
-router.get('/unblock-user/:id', (req, res) => {
+UserRouter.get('/unblock-user/:id', (req, res) => {
   res.send(`User unblocked with ID: ${req.params.id}`);
 });
 
-router.get('/get-matched-user/:id', (req, res) => {});
+UserRouter.get('/get-matched-user/:id', (req, res) => {});
 
-export default router;
+export default UserRouter;
