@@ -3,16 +3,21 @@ import prisma from '../../prisma.js';
 export const createUser = async (req, res, next) => {
     try{
         const { 
-            name,
-            email,
             githubUsername,
-
+            age,
+            gender,
+            interests,
+            location,
+            profession
         } = req.body;
         const newUser = await prisma.user.create({
             data:{
-                name,
-                email,
-                githubUsername
+                githubUsername,
+                age,
+                gender,
+                interests,
+                location,
+                profession
             }
         });
         res.status(201).send(newUser);
