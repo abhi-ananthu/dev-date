@@ -8,34 +8,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id             String    @id @default(auto()) @map("_id") @db.ObjectId
-  name           String
-  email          String    @unique
-  githubUsername String?
-  avatarUrl      String?
-  bio            String?
-  contributions  Int?
-  updatedAt      DateTime? @updatedAt
+model Profile {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  githubusername String
+  age            Int?
+  gender         String?
+  interests      String[]
+  location       String?
+  profession     String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
-  profile Profile?
+  matchesAsUser1 Match[] @relation("match-user-rel-1")
+  matchesAsUser2 Match[] @relation("match-user-rel-2")
 
   swipesSent     Swipe[] @relation("SwipesSent")
   swipesReceived Swipe[] @relation("SwipesReceived")
-}
-
-model Profile {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  userId     String   @unique @db.ObjectId
-  age        Int?
-  gender     String?
-  interests  String[]
-  location   String?
-  profession String?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id])
 }
 
 model Match {
@@ -43,6 +31,9 @@ model Match {
   user1Id   String   @db.ObjectId
   user2Id   String   @db.ObjectId
   matchedAt DateTime @default(now())
+
+  match1 Profile @relation(name: "match-user-rel-1", fields: [user1Id], references: [id])
+  match2 Profile @relation(name: "match-user-rel-2", fields: [user2Id], references: [id])
 }
 
 model Message {
@@ -54,14 +45,13 @@ model Message {
 }
 
 model Swipe {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  swiperId  String   @db.ObjectId
-  targetId  String   @db.ObjectId
-  direction String
-  swipedAt  DateTime @default(now())
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  swiperId String   @db.ObjectId
+  targetId String   @db.ObjectId
+  swipedAt DateTime @default(now())
 
-  swiper User @relation("SwipesSent", fields: [swiperId], references: [id])
-  target User @relation("SwipesReceived", fields: [targetId], references: [id])
+  swiper Profile @relation("SwipesSent", fields: [swiperId], references: [id])
+  target Profile @relation("SwipesReceived", fields: [targetId], references: [id])
 }
 
 model Notification {
