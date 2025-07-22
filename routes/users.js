@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { viewUserDetails } from '../controller/users/middleware';
 
 const router = Router();
 
@@ -6,9 +7,7 @@ router.post('/create-user', (req, res) => {
   res.send('User created');
 });
 
-router.get('/view-user/:id', (req, res) => {
-  res.send(`User details for ID: ${req.params.id}`);
-});
+router.get('/view-user/:id', viewUserDetails);
 
 router.post('/update-user/:id', (req, res) => {
   res.send(`User details updated for ID: ${req.params.id}`);
