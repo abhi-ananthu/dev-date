@@ -10,7 +10,7 @@ export const createUser = async (req, res, next) => {
             location,
             profession
         } = req.body;
-        const newUser = await prisma.user.create({
+        const newUser = await prisma.profile.create({
             data:{
                 githubUsername,
                 age,
@@ -33,7 +33,7 @@ export const createUser = async (req, res, next) => {
 export const viewUserDetails = async (req, res) => {
     try{
         const userId = req.params.id;
-        const user = await prisma.user.findUnique({
+        const user = await prisma.profile.findUnique({
             where: { id: userId }
         });
         res.send(user ? user : 'User not found');
