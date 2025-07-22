@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createUser, viewUserDetails } from '../controller/users/middleware';
+import { createUser, viewUserDetails } from '../controller/users/middleware.js';
 
 const router = Router();
 
@@ -24,3 +24,5 @@ router.get('/unblock-user/:id', (req, res) => {
 });
 
 router.get('/get-matched-user/:id', (req, res) => {});
+
+export default router;
