@@ -66,7 +66,7 @@
     overflow: hidden;
     padding-left: 1rem;
     padding-right: 1rem;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding-bottom 0.3s ease-out, margin-top 0.3s ease-out;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding-bottom 0.7s ease-out, margin-top 0.3s ease-out;
     will-change: max-height, opacity, padding; 
 }
 
