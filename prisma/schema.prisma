@@ -21,3 +21,9 @@ model Post {
   body     String
   authorId String @db.ObjectId
 }
+
+model User {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+  email String @unique
+}
