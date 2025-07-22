@@ -9,17 +9,19 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  name  String
-  email String @unique
-
-  githubUsername String? // Optional GitHub username
-  avatarUrl      String? // GitHub profile picture URL
-  bio            String? // GitHub or custom bio
-  contributions  Int? // Number of GitHub commits/contributions (monthly)
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  email          String    @unique
+  githubUsername String?
+  avatarUrl      String?
+  bio            String?
+  contributions  Int?
   updatedAt      DateTime? @updatedAt
 
   profile Profile?
+
+  swipesSent     Swipe[] @relation("SwipesSent")
+  swipesReceived Swipe[] @relation("SwipesReceived")
 }
 
 model Profile {
@@ -55,8 +57,11 @@ model Swipe {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   swiperId  String   @db.ObjectId
   targetId  String   @db.ObjectId
-  direction String // "left" or "right"
+  direction String
   swipedAt  DateTime @default(now())
+
+  swiper User @relation("SwipesSent", fields: [swiperId], references: [id])
+  target User @relation("SwipesReceived", fields: [targetId], references: [id])
 }
 
 model Notification {
@@ -65,13 +70,4 @@ model Notification {
   message   String
   read      Boolean  @default(false)
   createdAt DateTime @default(now())
-}
-
-model GitHubActivity {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  userId      String   @db.ObjectId
-  repoCount   Int
-  stars       Int
-  followers   Int
-  lastUpdated DateTime @default(now())
 }
