@@ -19,11 +19,10 @@ model Profile {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
-  matchesAsUser1 Match[] @relation("match-user-rel-1")
-  matchesAsUser2 Match[] @relation("match-user-rel-2")
-
-  swipesSent     Swipe[] @relation("SwipesSent")
-  swipesReceived Swipe[] @relation("SwipesReceived")
+  matchesAsUser1 Match[]   @relation("match-user-rel-1")
+  matchesAsUser2 Match[]   @relation("match-user-rel-2")
+  MessageAsUser1 Message[] @relation("message-user-rel-1")
+  MessageAsUser2 Message[] @relation("message-user-rel-2")
 }
 
 model Match {
@@ -31,6 +30,7 @@ model Match {
   user1Id   String   @db.ObjectId
   user2Id   String   @db.ObjectId
   matchedAt DateTime @default(now())
+  status    Boolean  @default(false)
 
   match1 Profile @relation(name: "match-user-rel-1", fields: [user1Id], references: [id])
   match2 Profile @relation(name: "match-user-rel-2", fields: [user2Id], references: [id])
@@ -42,16 +42,9 @@ model Message {
   receiverId String   @db.ObjectId
   content    String
   sentAt     DateTime @default(now())
-}
 
-model Swipe {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  swiperId String   @db.ObjectId
-  targetId String   @db.ObjectId
-  swipedAt DateTime @default(now())
-
-  swiper Profile @relation("SwipesSent", fields: [swiperId], references: [id])
-  target Profile @relation("SwipesReceived", fields: [targetId], references: [id])
+  sender   Profile @relation(name: "message-user-rel-1", fields: [senderId], references: [id])
+  receiver Profile @relation(name: "message-user-rel-2", fields: [receiverId], references: [id])
 }
 
 model Notification {

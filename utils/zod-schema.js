@@ -1,6 +1,8 @@
 import z from 'zod';
 
-export const UserSchema = z.object({});
+export const ProfileSchema = z.object({
+    
+});
 
 export const MatchSchmea = z.object({});
 
