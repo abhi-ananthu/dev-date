@@ -13,7 +13,7 @@ model Profile {
   githubusername String
   age            Int?
   gender         String?
-  interests      String[]
+  interests      String?
   location       String?
   profession     String?
   createdAt      DateTime @default(now())

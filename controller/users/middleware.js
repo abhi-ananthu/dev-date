@@ -1,18 +1,12 @@
 import prisma from '../../prisma/prisma.js';
+import { ProfileSchema } from '../../utils/zod-schema.js';
 
 export const createUser = async (req, res, next) => {
   try {
-    const { githubUsername, age, gender, interests, location, profession } =
-      req.body;
+    const parseResponse = ProfileSchema.safeParse(req.body);
+    if (parseResponse.error) return res.send({ error: parseResponse.error });
     const newUser = await prisma.profile.create({
-      data: {
-        githubUsername,
-        age,
-        gender,
-        interests,
-        location,
-        profession,
-      },
+      data: parseResponse.data,
     });
     res.status(201).send(newUser);
   } catch (err) {
@@ -47,3 +41,17 @@ export const deleteUserDetails = async (req, res, next) => {};
 export const blockUser = async (req, res, next) => {};
 
 export const unblockUser = async (req, res, next) => {};
+
+export const getRequestedUserMiddleware = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const requests = await prisma.match.findMany({
+      where: { user2Id: id, status: false },
+    });
+    if (!requests) return res.staus(404).send({ message: 'user not found' });
+    return res.status(200).send({ data: requests });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).send({ message: 'unable to fetch requests' });
+  }
+};
