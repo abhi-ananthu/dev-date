@@ -10,7 +10,7 @@ const FooterComment = () => {
     <>
         <div className={styles.footer}>
         <div className={styles.combo}>
-            <Image src="/images/footer.png" alt="Footer" width={20} height={20} className={styles.FooterComment}/>
+            <Image src="/images/footer.webp" alt="Footer" width={100} height={100} className={styles.FooterComment}/>
         </div>
         <div className={styles.title}>
             <span>Our</span><span>Community</span>Speaks For Us
