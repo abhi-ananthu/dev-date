@@ -10,8 +10,8 @@ const Card = ({className, title, subtitle, content, image}:{
   return (
     <>
       <div className={className.card}>
-            <Image src={image} alt="Image" width={20} height={20}/>
-            <div className={className.title}>
+            <Image src={image} alt="Image" width={30} height={20} className={className.icon}/>
+            <div className={className.card_title}>
                 {title}
             </div>
             <div className={className.subtitle}>
