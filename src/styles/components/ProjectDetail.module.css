@@ -1,0 +1,37 @@
+.header{
+    margin: 2.5rem 2rem;
+    color:black;
+}
+.breadcrumbTitle{
+    font-size: 0.9rem;
+    color:rgba(89, 32, 254, 1);
+    padding-left: 0.3rem;
+}
+.breadcrumb{
+    transform: translateY(0.08rem);
+}
+.title{
+    font-size:1.8rem;
+    font-weight:600;
+    margin-top: 1.5rem;
+    margin-bottom:1rem;
+
+}
+.descTitle{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom:1rem;
+}
+.desc{
+    border: 0.1rem solid rgba(75, 58, 58, 0.1);
+    border-radius: 2rem;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.descContent{
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+}

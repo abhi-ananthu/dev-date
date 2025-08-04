@@ -10,7 +10,7 @@ const FooterComment = () => {
     <>
         <div className={styles.footer}>
         <div className={styles.combo}>
-            <Image src={image} alt="Footer" width={400} height={300} className={styles.FooterComment}/>
+            <Image src={image} alt="Footer" width={350} height={250} className={styles.FooterComment}/>
         </div>
         <div className={styles.title}>
             <span className={styles.heading}>Our</span><span className={styles.heading}> Community</span><span className={styles.subheading}>Speaks For Us</span>
